@@ -16,5 +16,5 @@ A Python-based trading bot that connects directly to Interactive Brokers (IBKR) 
 python -m venv .venv && source .venv/bin/activate
 pip install -r req.txt
 ```
-Run TWS or IB Gateway with the API enabled, then start the bot script you need (`m1_backtest.py` for backtesting, `m2_code.py` / `m3_code.py` for live modules). Put any API keys (e.g. OpenAI) in a local `.env` file, which is git-ignored.
+Run TWS or IB Gateway with the API enabled, then start the bot script you need (`m1_backtest.py` and `m2_code.py` for backtesting, `m3_code.py` for the Tkinter GUI). Put any API keys (e.g. OpenAI) in a local `.env` file, which is git-ignored.
 
