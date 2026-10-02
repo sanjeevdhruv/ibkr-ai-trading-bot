@@ -73,7 +73,7 @@ is not on the paper allow-list.
 | Connects then times out / hangs | A pop-up in TWS is asking to accept the incoming connection. Accept it, or add `127.0.0.1` to Trusted IPs. |
 | `clientId already in use` | Another script is connected with the same ID. Change `client_id` in `settings.json`; every script needs its own. |
 | SPY prices are `nan` | No market-data subscription and delayed data not yet returned. Re-run, or check market hours. Delayed data (type 3) is requested by default. |
-| Account ID does not start with `D` | You are logged in to live. Log out and use the paper login. |
+| Account ID starts with `U`, not `DU` | TWS is logged in to your **live** account; the port number does not decide this, the login does. Log out, and on the TWS login screen switch to **Paper Trading** (or use your separate paper username). `connect_test.py` refuses to continue on a non-paper account. |
 
 ## 4. Connecting Claude
 

@@ -47,8 +47,12 @@ def main() -> int:
     try:
         accounts = ib.managedAccounts()
         print(f"Connected. Server version {ib.client.serverVersion()}, accounts: {accounts}")
-        if accounts and not all(a.startswith("D") for a in accounts):
-            print("WARNING: paper account IDs normally start with 'D'. Double-check you are not on a live login.")
+        # Paper account IDs start with "DU" (or "DF"); live ones start with "U".
+        # The socket port alone does not prove paper: TWS can serve a live login on 7497.
+        if not accounts or not all(a.startswith("D") for a in accounts):
+            print(f"REFUSING: {accounts} does not look like a paper account. "
+                  "Log out of TWS and log back in with your PAPER trading login.")
+            return 1
 
         summary = {v.tag: v.value for v in ib.accountSummary()
                    if v.tag in ("NetLiquidation", "AvailableFunds", "BuyingPower")}
