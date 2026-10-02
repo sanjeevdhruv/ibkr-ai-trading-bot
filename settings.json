@@ -1,0 +1,15 @@
+{
+  "_comment": "PAPER TRADING ONLY. 7497 = TWS paper, 4002 = IB Gateway paper. Never point this at 7496/4001 (live) without a full review.",
+  "ibkr": {
+    "host": "127.0.0.1",
+    "port": 7497,
+    "client_id": 10,
+    "account": "",
+    "readonly": true,
+    "timeout_sec": 10
+  },
+  "environment": {
+    "mode": "paper",
+    "allowed_ports": [7497, 4002]
+  }
+}
